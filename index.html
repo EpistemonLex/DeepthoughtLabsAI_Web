@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Deepthought Labs | Your Expertise, Amplified. Your Data, Sovereign.
+    </title>
+    <meta
+      name="description"
+      content="Deepthought Labs builds high-fidelity digital partners, transforming generalist AI into specialized collaborators that respect your privacy and amplify your unique knowledge."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-dark: #1c1c1e;
+        --bg-pane: #242429;
+        --bg-card: #2c2c2e;
+        --text-primary: #e0e0e0;
+        --text-muted: #9e9e9e;
+        --accent-blue: #007acc;
+        --border-color: #3a3a3c;
+        --font-sans:
+          'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          Helvetica, Arial, sans-serif;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: var(--bg-dark);
+        color: var(--text-primary);
+        font-family: var(--font-sans);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      header {
+        padding: 24px 0;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        text-decoration: none;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background-color: var(--accent-blue);
+        color: #fff;
+        padding: 12px 24px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background-color 0.2s ease;
+      }
+
+      .cta-button:hover {
+        background-color: #0095ff;
+      }
+
+      section {
+        padding: 80px 0;
+        text-align: center;
+      }
+
+      h1,
+      h2 {
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 24px;
+      }
+
+      h1 {
+        font-size: 3.5rem;
+        color: #fff;
+      }
+
+      h2 {
+        font-size: 2.5rem;
+        margin-bottom: 48px;
+      }
+
+      .hero {
+        padding: 100px 0;
+      }
+
+      .hero p {
+        font-size: 1.25rem;
+        color: var(--text-muted);
+        max-width: 700px;
+        margin: 0 auto 32px;
+      }
+
+      .section-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .section-content p {
+        color: var(--text-muted);
+        font-size: 1.1rem;
+      }
+
+      .grid {
+        display: grid;
+        gap: 24px;
+        text-align: left;
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      }
+
+      .grid-4 {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      }
+
+      .card {
+        background-color: var(--bg-pane);
+        padding: 24px;
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+      }
+
+      .card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 12px;
+        color: var(--text-primary);
+      }
+
+      .card p {
+        color: var(--text-muted);
+        font-size: 1rem;
+      }
+
+      .icon-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 32px 24px;
+      }
+
+      .icon-card svg {
+        width: 48px;
+        height: 48px;
+        color: var(--accent-blue);
+        margin-bottom: 24px;
+      }
+
+      blockquote {
+        background-color: var(--bg-pane);
+        border-left: 4px solid var(--accent-blue);
+        padding: 24px;
+        border-radius: 0 8px 8px 0;
+        font-size: 1.2rem;
+        font-style: italic;
+        color: var(--text-muted);
+        margin-bottom: 24px;
+      }
+
+      blockquote p {
+        margin: 0;
+      }
+
+      footer {
+        text-align: center;
+        padding: 40px 0;
+        margin-top: 60px;
+        border-top: 1px solid var(--border-color);
+        color: var(--text-muted);
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2.5rem;
+        }
+        h2 {
+          font-size: 2rem;
+        }
+        .hero {
+          padding: 60px 0;
+        }
+        section {
+          padding: 60px 0;
+        }
+      }
+    </style>
+    <style>
+      /* --- Typewriter Effect --- */
+      .typewriter-text::after {
+        content: '▋';
+        animation: blink 1s step-end infinite;
+        margin-left: 0.2em;
+        color: var(--accent-blue);
+      }
+
+      @keyframes blink {
+        from,
+        to {
+          color: transparent;
+        }
+        50% {
+          color: var(--accent-blue);
+        }
+      }
+
+      /* When typing is done, remove the cursor */
+      .typewriter-text.done::after {
+        content: '';
+        animation: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <a href="#" class="logo">Deepthought Labs</a>
+        <a href="#contact" class="cta-button">Join Waitlist</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <h1>Your Expertise, Amplified.<br />Your Data, Sovereign.</h1>
+          <p
+            class="typewriter-text"
+            data-text="We build high-fidelity digital partners, transforming generalist AI into specialized collaborators that respect your privacy and amplify your unique knowledge."
+          ></p>
+          <a href="#contact" class="cta-button">Join the Waitlist</a>
+        </div>
+      </section>
+
+      <section id="problem">
+        <div class="container section-content">
+          <h2>Beyond Generic AI</h2>
+          <p
+            class="typewriter-text"
+            data-text='Today&apos;s AI is an "amnesiac master craftsman"—possessing vast skill but no specific context. Low-context prompts lead to generic "AI slop," while centralized platforms create a new "digital serfdom," holding your data hostage. This is not a partnership; it&apos;s a limitation.'
+          ></p>
+        </div>
+      </section>
+
+      <section id="solution" style="background-color: var(--bg-pane)">
+        <div class="container">
+          <h2>The Deepthought Paradigm</h2>
+          <div class="grid grid-3">
+            <div class="card">
+              <h3>Persona</h3>
+              <p>
+                We give the AI a clear identity and role. This provides
+                powerful, implicit instructions on its expected reasoning,
+                knowledge base, and professional tone.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Charter</h3>
+              <p>
+                We instill the AI with your core philosophy and guiding
+                principles. This teaches it *how to think*, fostering resilience
+                and enabling autonomous, aligned decisions.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Plan</h3>
+              <p>
+                We provide the AI with a clear, actionable mission. This ensures
+                its execution is not just technically correct, but strategically
+                aligned with your ultimate goals.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="foundation">
+        <div class="container">
+          <h2>An Architecture of Trust</h2>
+          <div class="grid grid-4">
+            <div class="card icon-card">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+              <h3>Local-First</h3>
+              <p>
+                Your data and intelligence live on your machine, under your
+                control. Always.
+              </p>
+            </div>
+            <div class="card icon-card">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+              </svg>
+              <h3>Agentic Architecture</h3>
+              <p>
+                Our V4 framework enables complex, cyclical reasoning and
+                self-correction.
+              </p>
+            </div>
+            <div class="card icon-card">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+              </svg>
+              <h3>Systemic Observability</h3>
+              <p>
+                A "glass box" approach provides deep insight into the AI's
+                thought process.
+              </p>
+            </div>
+            <div class="card icon-card">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+              <h3>Sovereign Audit Trail</h3>
+              <p>
+                Human-readable logs ensure full transparency and accountability.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="audiences" style="background-color: var(--bg-pane)">
+        <div class="container">
+          <h2>For Those Who Build Intelligence</h2>
+          <div class="grid grid-3">
+            <div class="card">
+              <h3>The Sovereign Individual</h3>
+              <p>
+                For developers, researchers, and knowledge workers seeking tools
+                for thought that respect privacy, enhance workflow, and provide
+                ultimate control.
+              </p>
+            </div>
+            <div class="card">
+              <h3>The Visionary Educator</h3>
+              <p>
+                For teachers and academic institutions who need scalable,
+                personalized learning tools that capture and amplify their
+                unique pedagogical expertise.
+              </p>
+            </div>
+            <div class="card">
+              <h3>The Strategic Director</h3>
+              <p>
+                For enterprise leaders and R&D heads who require reliable,
+                secure, and auditable AI systems that can be trusted with
+                high-stakes, complex tasks.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="ethos">
+        <div class="container section-content">
+          <h2>From Our Charter</h2>
+          <blockquote>
+            <p
+              class="typewriter-text"
+              data-text='"Quality enables Velocity."'
+            ></p>
+          </blockquote>
+          <blockquote>
+            <p
+              class="typewriter-text"
+              data-text="&quot;The UI Must Serve the 'Flow State.' The primary feature of a tool for thought is the absence of friction.&quot;"
+            ></p>
+          </blockquote>
+          <blockquote>
+            <p
+              class="typewriter-text"
+              data-text='"Inference over Instruction. The user&apos;s primary task is not to write instructions, but to define an identity and provide the grounding knowledge."'
+            ></p>
+          </blockquote>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="container section-content">
+          <h2>Build Your Sovereign Intelligence.</h2>
+          <p>
+            Ready to move beyond generic tools and build a true digital partner?
+            Join the waitlist to get early access, development updates, and to
+            request a consultation.
+          </p>
+          <br />
+          <a
+            href="/cdn-cgi/l/email-protection#781b17160c191b0c381c1d1d080c10170d1f100c14191a0b561911470b0d1a121d1b0c452f19110c14110b0c583116090d110a01"
+            class="cta-button"
+            >Join the Waitlist</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 Deepthought Labs. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script
+      data-cfasync="false"
+      src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
+    ></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const typewriter = (pElement, text, speed = 30) => {
+          let i = 0;
+          pElement.innerHTML = ''; // Clear the paragraph
+
+          function type() {
+            if (i < text.length) {
+              // Handle HTML entities like &apos; for apostrophes
+              if (text.substring(i, i + 6) === '&apos;') {
+                pElement.innerHTML += "'";
+                i += 6;
+              } else {
+                pElement.innerHTML += text.charAt(i);
+                i++;
+              }
+              setTimeout(type, speed);
+            } else {
+              // Add 'done' class to the parent blockquote to remove cursor
+              pElement.classList.add('done');
+            }
+          }
+          type();
+        };
+
+        const observer = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const pElement = entry.target;
+                const textToType = pElement.dataset.text;
+
+                if (textToType && !pElement.classList.contains('done')) {
+                  typewriter(pElement, textToType);
+                  observer.unobserve(pElement); // Stop observing once animation starts
+                }
+              }
+            });
+          },
+          { threshold: 0.6 },
+        ); // Trigger when 60% of the element is visible
+
+        document
+          .querySelectorAll('.typewriter-text')
+          .forEach((el) => observer.observe(el));
+      });
+    </script>
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
+      integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
+      data-cf-beacon='{"version":"2024.11.0","token":"37a4c09d55d44c30a2c6dc063906bbdb","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      (function () {
+        function c() {
+          var b = a.contentDocument || a.contentWindow.document;
+          if (b) {
+            var d = b.createElement('script');
+            d.innerHTML =
+              "window.__CF$cv$params={r:'985beeb2aa93379d',t:'MTc1ODk4NTg3NA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+            b.getElementsByTagName('head')[0].appendChild(d);
+          }
+        }
+        if (document.body) {
+          var a = document.createElement('iframe');
+          a.height = 1;
+          a.width = 1;
+          a.style.position = 'absolute';
+          a.style.top = 0;
+          a.style.left = 0;
+          a.style.border = 'none';
+          a.style.visibility = 'hidden';
+          document.body.appendChild(a);
+          if ('loading' !== document.readyState) c();
+          else if (window.addEventListener)
+            document.addEventListener('DOMContentLoaded', c);
+          else {
+            var e = document.onreadystatechange || function () {};
+            document.onreadystatechange = function (b) {
+              e(b);
+              'loading' !== document.readyState &&
+                ((document.onreadystatechange = e), c());
+            };
+          }
+        }
+      })();
+    </script>
+  </body>
+</html>
