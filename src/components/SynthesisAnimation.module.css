@@ -7,27 +7,72 @@
   position: relative;
 }
 
-.node {
-  fill: var(--accent-blue);
-  transition: opacity 1s ease-out, filter 1s ease-out;
-  opacity: 0.1; /* Start very dim */
-  filter: drop-shadow(0 0 2px var(--accent-blue));
+/* Groups for opacity transition */
+.nodeGroup, .edgeGroup {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 }
-
-.edge {
-  stroke: var(--text-muted);
-  stroke-width: 0.5;
-  transition: opacity 1s ease-out, stroke 1s ease-out;
-  opacity: 0.1; /* Start very dim */
-}
-
-/* Styles for when the animation triggers */
-.node.active {
+.nodeGroup.active, .edgeGroup.active {
   opacity: 1;
+}
+
+/* Base styles for story nodes */
+.node {
+  stroke-width: 2;
+  stroke: var(--accent-blue);
+  fill: var(--background-color);
+  transition: filter 0.3s ease-in-out;
+}
+.nodeGroup.active .node {
   filter: drop-shadow(0 0 8px var(--accent-blue));
 }
 
-.edge.active {
+/* Specific styles for different node types */
+.agent {
+  /* Pentagons, already styled via .node */
+}
+.tool {
+  /* Circles, already styled via .node */
+}
+
+/* Node & Edge Labels */
+.nodeLabel {
+  font-size: 10px;
+  font-weight: bold;
+  fill: var(--text-color);
+  text-transform: uppercase;
+  pointer-events: none;
+  font-family: var(--font-mono);
+}
+.edgeLabel {
+  font-size: 10px;
+  fill: var(--text-muted);
+  font-family: var(--font-mono);
+}
+.edgeGroup.active .edgeLabel {
+  fill: var(--accent-blue);
+}
+
+/* Story Edge */
+.edge {
   stroke: var(--accent-blue);
+  stroke-width: 1.5;
+}
+
+/* Background constellation */
+.backgroundGraph {
+  opacity: 0;
+  transition: opacity 1.5s ease-in;
+}
+.backgroundGraph.visible {
   opacity: 1;
+}
+.backgroundNode {
+  fill: var(--text-muted);
+  opacity: 0.2;
+}
+.backgroundEdge {
+  stroke: var(--text-muted);
+  stroke-width: 0.5;
+  opacity: 0.1;
 }
