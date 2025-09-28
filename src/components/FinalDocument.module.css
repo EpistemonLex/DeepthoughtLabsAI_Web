@@ -1,0 +1,56 @@
+.documentContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 350px;
+  max-width: 90%;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  opacity: 0;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+  transition-delay: 0.2s;
+  z-index: 100;
+}
+
+.documentContainer.visible {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+.documentHeader {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #333;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.headerDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.documentBody {
+  padding: 20px;
+  color: #e0e0e0;
+}
+
+.documentTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 15px 0;
+  color: #ffffff;
+}
+
+.documentText {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #b0b0b0;
+  margin: 0;
+}
