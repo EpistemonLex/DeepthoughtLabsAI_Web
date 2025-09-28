@@ -1,0 +1,22 @@
+.section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 8rem 2rem;
+  text-align: center;
+}
+
+.heading {
+  font-family: var(--font-headings);
+  font-size: 3rem; /* 48px */
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+.text {
+  font-family: var(--font-body);
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.6;
+  color: var(--text-muted);
+}

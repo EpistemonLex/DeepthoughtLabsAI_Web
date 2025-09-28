@@ -1,0 +1,85 @@
+/* Footer.module.css */
+.footer {
+  width: 100%;
+  background-color: var(--bg-pane);
+  border-top: 1px solid var(--border-color);
+  padding: 4rem 2rem;
+  margin-top: 5rem;
+}
+
+.grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto;
+  gap: 1px; /* Creates the border lines */
+  background-color: var(--border-color);
+  border: 1px solid var(--border-color);
+}
+
+.cell {
+  background-color: var(--bg-pane);
+  padding: 1.5rem;
+}
+
+.mainCell {
+  grid-column: 1 / span 3;
+  grid-row: 1 / span 2;
+}
+
+.logo {
+  font-family: var(--font-logo);
+  font-size: 2rem;
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.copyright {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.heading {
+  font-family: var(--font-headings);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.linkList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.link {
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: var(--accent-blue);
+}
+
+.revCell {
+  text-align: center;
+}
+
+.revCell .heading {
+  margin-bottom: 0.5rem;
+}
+
+.revCell span {
+  font-family: var(--font-logo);
+  font-size: 2rem;
+  color: var(--text-primary);
+}

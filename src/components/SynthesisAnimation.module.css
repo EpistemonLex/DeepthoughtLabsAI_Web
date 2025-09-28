@@ -1,0 +1,33 @@
+/* SynthesisAnimation.module.css */
+.container {
+  height: 22rem; /* 352px */
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.node {
+  fill: var(--accent-blue);
+  transition: opacity 1s ease-out, filter 1s ease-out;
+  opacity: 0.1; /* Start very dim */
+  filter: drop-shadow(0 0 2px var(--accent-blue));
+}
+
+.edge {
+  stroke: var(--text-muted);
+  stroke-width: 0.5;
+  transition: opacity 1s ease-out, stroke 1s ease-out;
+  opacity: 0.1; /* Start very dim */
+}
+
+/* Styles for when the animation triggers */
+.node.active {
+  opacity: 1;
+  filter: drop-shadow(0 0 8px var(--accent-blue));
+}
+
+.edge.active {
+  stroke: var(--accent-blue);
+  opacity: 1;
+}

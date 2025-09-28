@@ -1,0 +1,28 @@
+.connector {
+  height: 12rem; /* 192px - The space between sections */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.5s ease-in-out;
+}
+
+.connector.visible {
+  opacity: 1;
+}
+
+.line {
+  stroke: var(--accent-blue);
+  stroke-width: 2;
+  stroke-dasharray: 200; /* Total length of the line */
+  stroke-dashoffset: 200; /* Starts with the line "drawn" off-screen */
+  animation: draw-line 2s ease-out forwards;
+  /* Glow effect */
+  filter: drop-shadow(0 0 5px var(--accent-blue));
+}
+
+@keyframes draw-line {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
